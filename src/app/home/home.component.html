@@ -1,0 +1,10 @@
+<md-grid-list cols="3">
+  <md-grid-tile *ngFor="let person of people">
+    <app-score [name]="person.name" [score]="person.score"></app-score>
+  </md-grid-tile>
+  <md-grid-tile>
+    <button md-fab (click)="addPerson()">
+      <md-icon>add</md-icon>
+    </button>
+  </md-grid-tile>
+</md-grid-list>
