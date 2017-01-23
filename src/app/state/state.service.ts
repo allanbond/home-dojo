@@ -4,28 +4,40 @@ import { Injectable } from '@angular/core';
 export class StateService {
 
   public people: Array<any>;
+  public selectedPerson: any;
+  public positiveBehaviors: Array<any>;
+  public negativeBehaviors: Array<any>;
 
   constructor() {
     this.people = [
       {
         name: 'David',
-        score: 1234
+        score: 65,
+        img: './assets/david.jpg'
       },
       {
         name: 'Alex',
-        score: 1234
+        score: 73,
+        img: './assets/alex2.jpg'
       },
       {
         name: 'Jacob',
-        score: 1235
-      },
+        score: 24,
+        img: './assets/jakey.jpg'
+      }
+    ];
+
+    this.positiveBehaviors = [
       {
-        name: 'Allan',
-        score: 1236
-      },
+        label: 'Made Bed',
+        points: 1
+      }
+    ];
+
+    this.negativeBehaviors = [
       {
-        name: 'Sandra',
-        score: 1231
+        label: 'Mean to Siblings',
+        points: 2
       }
     ];
   }
@@ -47,5 +59,29 @@ export class StateService {
 
   getPeople() {
     return this.people;
+  }
+
+  selectPerson(person) {
+    this.selectedPerson = person;
+  }
+
+  getSelectedPerson() {
+    return this.selectedPerson;
+  }
+
+  addPositiveBehavior(behavior) {
+    this.positiveBehaviors.push(behavior);
+  }
+
+  getPositiveBehaviors() {
+    return this.positiveBehaviors;
+  }
+
+  addNegativeBehavior(behavior: any) {
+    this.negativeBehaviors.push(behavior)
+  }
+
+  getNegativeBehaviors() {
+    return this.negativeBehaviors;
   }
 }

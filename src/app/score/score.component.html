@@ -1,4 +1,19 @@
 <md-card>
-  <md-card-title>{{name}}</md-card-title>
-  <md-card-subtitle>{{score}}</md-card-subtitle>
+  <md-card-title-group>
+    <md-card-title>{{name}}</md-card-title>
+    <md-card-subtitle>
+        <!--<div class="burst-8"></div>-->
+        <span class="points">+{{score}}</span> 
+    </md-card-subtitle>
+    <img md-card-md-image src="{{img}}"/>
+  </md-card-title-group>
+  <md-card-actions>
+    <button md-icon-button (click)="addPoints()" ><md-icon>add</md-icon></button>
+    <button md-icon-button><md-icon>remove</md-icon></button>
+  </md-card-actions>
+  <!--<md-card-header>
+    <img md-card-avatar src="./assets/david.jpg"/>
+    <md-card-title>{{name}}</md-card-title>
+    <md-card-subtitle>{{score}}</md-card-subtitle>
+  </md-card-header>-->
 </md-card>

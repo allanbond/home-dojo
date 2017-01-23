@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
-import { AddPersonComponent } from '../add-person/add-person.component'
+import { Router } from '@angular/router';
+import { AddPersonComponent } from '../add-person/add-person.component';
+import { PersonComponent } from '../person/person.component';
 import { StateService } from '../state/state.service';
 
 @Component({
@@ -12,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   public people = [];
 
-  constructor(public dialog: MdDialog, public state: StateService) {
+  constructor(public dialog: MdDialog, private router: Router, public state: StateService) {
     this.people = state.getPeople();
   }
 
@@ -28,5 +30,12 @@ export class HomeComponent implements OnInit {
           score: 0
         });
     });
+  }
+
+  selectPerson = (person) => {
+    this.state.selectPerson(person);
+
+    // this.router.navigate(['/person', person.name]);
+    let dialogRef = this.dialog.open(PersonComponent);
   }
 }

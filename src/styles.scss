@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css'; */
+@import 'theme';
+
+html {
+    height: 100%;
+    body {
+        height: 100%;
+        margin: 0;
+
+        app-root {
+            display: block;
+            height: inherit;
+
+            app-person {
+                display: block;
+                height: inherit;
+            }
+
+            app-score {
+                width: 250px;
+            }
+
+            md-tab-group {
+                height: inherit;
+
+                .md-tab-body-wrapper {
+                    height: inherit;
+
+                    md-tab-body {
+                        height: inherit;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    font-family: 'Carter One', cursive;
+    font-size: 36px;
+}
+
+.points {
+    font-family: 'Carter One', cursive;
+    font-size: 32px;
+    transform: rotate(30deg);
+}
+
+
+.burst-8 {
+    background: red;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    text-align: center;
+    -webkit-transform: rotate(20deg);
+       -moz-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+         -o-transform: rotate(20eg);
+}
+.burst-8:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 80px;
+    background: red;
+    -webkit-transform: rotate(135deg);
+       -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+         -o-transform: rotate(135deg);
+}

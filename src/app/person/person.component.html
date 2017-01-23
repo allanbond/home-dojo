@@ -1,0 +1,18 @@
+<md-tab-group [dynamicHeight]="true">
+  <md-tab label="Give">
+    <button md-raised-button *ngFor="let behavior of positiveBehaviors">
+      {{behavior.label}} (+{{behavior.points}})
+    </button>
+    <button md-mini-fab>
+      <md-icon>add</md-icon>
+    </button>
+  </md-tab>
+  <md-tab label="Deduct">
+    <button md-raised-button *ngFor="let behavior of negativeBehaviors">
+      {{behavior.label}} (-{{behavior.points}})
+    </button>
+    <button md-mini-fab>
+      <md-icon>add</md-icon>
+    </button>
+  </md-tab>
+</md-tab-group>
